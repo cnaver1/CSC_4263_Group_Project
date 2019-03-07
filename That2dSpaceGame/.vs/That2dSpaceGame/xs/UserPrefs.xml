@@ -1,0 +1,18 @@
+﻿<Properties StartupConfiguration="{347D3A34-9A99-A287-3BAC-B45B601B2569}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/WASD_Objective.cs">
+    <Files>
+      <File FileName="Assets/Scripts/ThePlayer_Movement.cs" Line="15" Column="10" />
+      <File FileName="Assets/Scripts/Camera_Movement.cs" Line="25" Column="2" />
+      <File FileName="Assets/Scripts/NextLevelTrigger.cs" Line="11" Column="6" />
+      <File FileName="Assets/Scripts/NextSceneTrigger.cs" Line="14" Column="47" />
+      <File FileName="Assets/Scripts/WASD_Objective.cs" Line="48" Column="45" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.ItemProperties.Assembly-CSharp PreferredExecutionTarget="Unity.Editor" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MultiItemStartupConfigurations />
+</Properties>
