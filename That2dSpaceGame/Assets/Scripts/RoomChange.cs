@@ -16,7 +16,7 @@ public class RoomChange : MonoBehaviour
     {
         CurrentRoom.SetActive(false);
         NextRoom.SetActive(true);
-        Door.GetComponent<BoxCollider2D>().enabled = false;
+      
     }
 
 }

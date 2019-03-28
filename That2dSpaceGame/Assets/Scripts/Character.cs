@@ -7,49 +7,85 @@ public abstract class Character : MonoBehaviour
     [SerializeField]
     private float speed;
 
-    private Animator animator;
+    protected Animator myAnimator;
 
     protected Vector2 direction;
+
+    private Rigidbody2D myRigidbody;
+
+
+    public GameObject isAttack;
+    public GameObject ThePlayer;
+    protected bool isAttacking;
+    public bool isMoving
+    {
+        get { return direction.x != 0 || direction.y != 0; }
+    }
 
 
 
     // Start is called before the first frame update
-    void Start()
+    protected virtual void Start()
     {
-        animator = GetComponent<Animator>();
+        myRigidbody = GetComponent<Rigidbody2D>();
+        myAnimator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     protected virtual void Update()
     {
+        handleLayers();
+
+    }
+
+    protected void FixedUpdate()
+    {
         Move();
     }
 
-
     public void Move()
     {
-        transform.Translate(direction * speed * Time.deltaTime);
+        myRigidbody.velocity = direction.normalized * speed;
+    }
 
-        if(direction.x != 0 || direction.y != 0)
+    public void handleLayers()
+    {
+        if (isMoving)
         {
-            AnimateMovement(direction);
-        }
-        else
-        {
-            animator.SetLayerWeight(1, 0);
-        }
-
         
+            ActivateLayer("Walk");
+
+            myAnimator.SetFloat("x", direction.x);
+            myAnimator.SetFloat("y", direction.y);
+
+            if (isAttacking)
+            {
+                Instantiate(isAttack, transform.position, Quaternion.identity);
+
+            }
+         
+        }
+       /* else if (isAttacking)
+        {
+            ActivateLayer("Attack");
+        }*/
+
+       else
+        {
+            ActivateLayer("Idle");
+        }
 
     }
 
-    public void AnimateMovement(Vector2 direction)
+  
+    public void ActivateLayer(string layerName)
     {
-        animator.SetLayerWeight(1, 1);
+        for(int i = 0; i < myAnimator.layerCount; i++)
+        {
+            myAnimator.SetLayerWeight(i, 0);
+        }
 
-        animator.SetFloat("Horizontal", direction.x);
-        animator.SetFloat("Vertical", direction.y);
-
+        myAnimator.SetLayerWeight(myAnimator.GetLayerIndex(layerName), 1);
     }
 
 }

@@ -11,6 +11,7 @@ public class HealthPickup : MonoBehaviour
     public Image healthBar;
     public float startHealth = 100;
     
+    
 
     void Update()
     {   
@@ -27,12 +28,14 @@ public class HealthPickup : MonoBehaviour
             hp = 100;
             PlayerStats.hp = hp;
             HealthItem.SetActive(false);
+          
         }
         else
         {
             hp += 25;
             PlayerStats.hp = hp;
             HealthItem.SetActive(false);
+           
         }
     }
 
