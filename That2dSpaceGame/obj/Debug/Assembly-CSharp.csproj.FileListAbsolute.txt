@@ -280,3 +280,7 @@ F:\GitHub\CSC_4263\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSh
 F:\GitHub\CSC_4263\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.csproj.CopyComplete
 F:\GitHub\CSC_4263\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.dll
 F:\GitHub\CSC_4263\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.pdb
+F:\GitHub\CSC_4263\CSC_4263_Group_Project\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.csprojAssemblyReference.cache
+F:\GitHub\CSC_4263\CSC_4263_Group_Project\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.csproj.CoreCompileInputs.cache
+F:\GitHub\CSC_4263\CSC_4263_Group_Project\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.dll
+F:\GitHub\CSC_4263\CSC_4263_Group_Project\CSC_4263_Group_Project\That2dSpaceGame\obj\Debug\Assembly-CSharp.pdb

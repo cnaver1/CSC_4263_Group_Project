@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Enemy
   - HealthItem
+  - Projectile
+  - Bullets
   layers:
   - Default
   - TransparentFX
@@ -18,10 +20,10 @@ TagManager:
   - Background
   - Player
   - Floor_Sprites
-  - 
-  - 
-  - 
-  - 
+  - Bullets
+  - Doors
+  - Walls
+  - Enemy
   - 
   - 
   - 

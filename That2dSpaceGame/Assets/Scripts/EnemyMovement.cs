@@ -6,6 +6,9 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
+  
+
+  
     public float speed;
     public float stopDist = 0.3f;
 
@@ -20,5 +23,13 @@ public class EnemyMovement : MonoBehaviour
         {
             transform.position = Vector2.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
         }
+
+
+
     }
+
+   
+
+   
+  
 }

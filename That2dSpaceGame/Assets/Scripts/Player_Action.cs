@@ -6,7 +6,8 @@ public class Player_Action : Character
 {
 
     public Animator animator;
-    int directionAttacking;  /* 1 = up 2 = down 3 = left 4 = right */
+    bool isAttacking;  
+    public  GameObject isAttack;
 
    protected override void Update()
     {
@@ -15,16 +16,16 @@ public class Player_Action : Character
 
         base.Update();
     }
-      /*{
-        Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
+    /*{
+      Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"), 0.0f);
 
-          animator.SetFloat("Horizontal", movement.x);
-          animator.SetFloat("Vertical", movement.y);
-          animator.SetFloat("Magnitude", movement.magnitude);
-          transform.position = transform.position + movement * Time.deltaTime;
+        animator.SetFloat("Horizontal", movement.x);
+        animator.SetFloat("Vertical", movement.y);
+        animator.SetFloat("Magnitude", movement.magnitude);
+        transform.position = transform.position + movement * Time.deltaTime;
 
-     
-      }*/
+
+    }*/
 
     private void GetInput()
     {
@@ -34,41 +35,58 @@ public class Player_Action : Character
         if (Input.GetKey(KeyCode.S)) { direction += Vector2.down; }
         if (Input.GetKey(KeyCode.D)) { direction += Vector2.right; }
 
-        if (Input.GetKey(KeyCode.LeftArrow)) {
-            direction += Vector2.left;
-            directionAttacking = 3;
-            StartCoroutine(Attack());
-        }
-
-        if (Input.GetButtonDown("Fire")
+        if (isAttacking == false)
         {
-            direction += Vector2.right;
-            directionAttacking = 4;
-            StartCoroutine(Attack());
-        }
+            if (Input.GetButtonDown("leftfire"))
+            {
+                GameObject shurken = Instantiate(isAttack, transform.position, Quaternion.identity);
+                shurken.GetComponent<Rigidbody2D>().velocity = new Vector2(-1.0f, 0.0f);
+                shurken.tag = "Bullets";
+                StartCoroutine(Attack());
+                Destroy(shurken, 1.0f);
+                isAttacking = true;
+                StartCoroutine(Attack());
+            }
+            if (Input.GetButtonDown("rightfire"))
+            {
+                GameObject shurken = Instantiate(isAttack, transform.position, Quaternion.identity);
+                shurken.GetComponent<Rigidbody2D>().velocity = new Vector2(1.0f, 0.0f);
+                shurken.tag = "Bullets";
+                StartCoroutine(Attack());
+                Destroy(shurken, 1.0f);
+                isAttacking = true;
+                StartCoroutine(Attack());
+            }
+            if (Input.GetButtonDown("upfire"))
+            {
+                GameObject shurken = Instantiate(isAttack, transform.position, Quaternion.identity);
+                shurken.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, 1.0f);
+                shurken.tag = "Bullets";
+                StartCoroutine(Attack());
+                Destroy(shurken, 1.0f);
+                isAttacking = true;
+                StartCoroutine(Attack());
+            }
+            if (Input.GetButtonDown("downfire"))
+            {
+                GameObject shurken = Instantiate(isAttack, transform.position, Quaternion.identity);
+                shurken.GetComponent<Rigidbody2D>().velocity = new Vector2(0.0f, -1.0f);
+                shurken.tag = "Bullets";
+                StartCoroutine(Attack());
+                Destroy(shurken, 1.0f);
+                isAttacking = true;
+                StartCoroutine(Attack());
+            }
 
-        if (Input.GetKey(KeyCode.UpArrow))
-        {
-            direction += Vector2.up;
-            directionAttacking = 1;
-            StartCoroutine(Attack());
         }
-
-        if (Input.GetKey(KeyCode.DownArrow))
-        {
-            direction += Vector2.down;
-            directionAttacking = 2;
-            StartCoroutine(Attack());
-        }
-
     }
 
     private IEnumerator Attack()
     {
-        isAttacking = true;
-        myAnimator.SetBool("attack", isAttacking);
-        isAttacking = true;
+
+
         yield return new WaitForSeconds(1);
         isAttacking = false;
+
     }
 }

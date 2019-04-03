@@ -14,9 +14,9 @@ public abstract class Character : MonoBehaviour
     private Rigidbody2D myRigidbody;
 
 
-    public GameObject isAttack;
-    public GameObject ThePlayer;
-    protected bool isAttacking;
+
+ 
+
     public bool isMoving
     {
         get { return direction.x != 0 || direction.y != 0; }
@@ -50,6 +50,8 @@ public abstract class Character : MonoBehaviour
 
     public void handleLayers()
     {
+       
+
         if (isMoving)
         {
         
@@ -57,12 +59,6 @@ public abstract class Character : MonoBehaviour
 
             myAnimator.SetFloat("x", direction.x);
             myAnimator.SetFloat("y", direction.y);
-
-            if (isAttacking)
-            {
-                Instantiate(isAttack, transform.position, Quaternion.identity);
-
-            }
          
         }
        /* else if (isAttacking)

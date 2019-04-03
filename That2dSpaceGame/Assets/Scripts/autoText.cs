@@ -6,12 +6,15 @@ using UnityEngine.UI;
 
 public class autoText : MonoBehaviour
 {
-   string myString = " these chains aint shit pimp";
+    string myString = " Guards...Guards, what!";
+   
+
    public GameObject myText;
+    public GameObject Continue;
     void Start()
     {
         StartCoroutine("AutoType");
-
+     
         myText.GetComponent<Text>().text = null;
     }
 
@@ -28,5 +31,7 @@ public class autoText : MonoBehaviour
             myText.GetComponent<Text>().text += letter;
             yield return new WaitForSeconds(.1f);
         }
+        Continue.SetActive(true);
     }
+
 }
