@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class EnemyStats : MonoBehaviour
 {
+    public GameObject DeathEffect;
     Rigidbody2D rb;
     public float currentHealth;
     private float startHealth = 100;
@@ -30,6 +31,8 @@ public class EnemyStats : MonoBehaviour
 
     void Death()
     {
+        GameObject prefab = Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
+        prefab.SetActive(true);
         Destroy(gameObject);
     }
 
@@ -37,8 +40,6 @@ public class EnemyStats : MonoBehaviour
     {
         currentHealth -= amount;
         healthBar.fillAmount = currentHealth / startHealth;
-
-
     }
 
     void OnCollisionEnter2D(Collision2D other)

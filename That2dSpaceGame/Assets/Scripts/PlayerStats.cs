@@ -31,14 +31,18 @@ public class PlayerStats : MonoBehaviour
         healthBar.fillAmount = hp / startHealth;
         SavePlayer();
 
+        if(hp <= 0)
+        {
+            
+        }
     }
 
     void Dead()
     {
-        
+        Destroy(gameObject);
     }
 
-    void takeDamage(float amount)
+    public void takeDamage(float amount)
     {
         hp -= amount;
         healthBar.fillAmount = hp / startHealth;
@@ -67,18 +71,18 @@ public class PlayerStats : MonoBehaviour
                 transform.position = new Vector2(transform.position.x, transform.position.y + knockBack);
             }
 
-            OnHit();
+            takeDamage(25);
+        }
+
+        if (other.gameObject.CompareTag("EnemyBullet"))
+        {
+            takeDamage(25);
+            Destroy(other.gameObject);
         }
     }
 
-    void OnHit()
-    {
-        takeDamage(10);
-        if (hp < 1)
-        {
-            Dead();
-        }
-    }
+       
+    
 
     public void SavePlayer()
     {

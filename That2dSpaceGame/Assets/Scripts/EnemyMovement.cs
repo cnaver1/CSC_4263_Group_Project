@@ -9,7 +9,7 @@ public class EnemyMovement : MonoBehaviour
   
 
   
-    public float speed;
+    public static float speed;
     public float stopDist = 0.3f;
 
     void Start()
