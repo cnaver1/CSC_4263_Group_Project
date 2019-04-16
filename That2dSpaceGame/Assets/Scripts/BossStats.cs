@@ -4,16 +4,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 
-public class Boss01 : MonoBehaviour
+public class BossStats : MonoBehaviour
 {
     [SerializeField]
-    public GameObject bullet;
    public GameObject DeathEffect;
 
-    public float startHealth = 10;
+    public float startHealth = 200;
     public float currentHealth;
-    float fireRate;
-    float nextFire;
+    public float fireRate;
     public GameObject healthUI;
 
     [Header("Unity")]
@@ -21,8 +19,6 @@ public class Boss01 : MonoBehaviour
 
     void Start()
     {
-        fireRate = 1f;
-        nextFire = Time.time;
         currentHealth = startHealth;
         healthUI.SetActive(true);
       
@@ -30,23 +26,19 @@ public class Boss01 : MonoBehaviour
 
     void Update()
     {
-        CheckFire();
+       
         healthBar.fillAmount = currentHealth / startHealth;
+
         if (currentHealth <= 0)
         {
             Death();
         }
+
+  
     }
 
-    void CheckFire()
-    {
-        if(Time.time > nextFire)
-        {
-            GameObject b = Instantiate(bullet, transform.position, Quaternion.identity);
-            b.tag = "EnemyBullet";
-            nextFire = Time.time + fireRate;
-        }
-    }
+   
+
 
      void OnCollisionEnter2D(Collision2D other)
     {
@@ -55,6 +47,7 @@ public class Boss01 : MonoBehaviour
             Destroy(other.gameObject);
             takeDamage(10);
         }
+       
     }
 
     public void takeDamage(int damage)
@@ -73,4 +66,5 @@ public class Boss01 : MonoBehaviour
         
     }
 
+   
 }

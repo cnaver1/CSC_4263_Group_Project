@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class HealthPickup : MonoBehaviour
 {
     public GameObject HealthItem;
-    public static float hp;
+    public float hp;
     [Header("Unity")]
     public Image healthBar;
     public float startHealth = 100;

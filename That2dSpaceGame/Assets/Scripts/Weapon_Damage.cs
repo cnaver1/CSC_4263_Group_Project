@@ -6,6 +6,7 @@ public class Weapon_Damage : MonoBehaviour
 {
     public GameObject isAttack;
    public float enemyHealth;
+    public static int weaponDamage = 25;
 
  
     private IEnumerator Attack()
@@ -20,7 +21,7 @@ public class Weapon_Damage : MonoBehaviour
     {
         if (other.gameObject.tag == "Enemy")
         {
-            other.gameObject.GetComponent<EnemyStats>().takeDamage(25);
+            other.gameObject.GetComponent<EnemyStats>().takeDamage(weaponDamage);
         }   
     }
 

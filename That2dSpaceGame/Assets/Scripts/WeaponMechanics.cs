@@ -5,8 +5,9 @@ using UnityEngine.UI;
 
 public class WeaponMechanics : MonoBehaviour
 {
-    string []char_dia =  new string[] { "WTF ARE THOSE?", "No matter.." , "Use the Arrow Keys to Attack"};
-
+    public static int size;
+    public string[] char_dia = new string[size];
+   // "WTF ARE THOSE?", "No matter.." , "Use the Arrow Keys to Attack"
     public GameObject text;
     public GameObject background;
     public GameObject Continue;
@@ -14,10 +15,15 @@ public class WeaponMechanics : MonoBehaviour
     public bool buttonOn;
     public int i = 0;
 
+
+
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        DisableMovement();
         ex.SetActive(true);
-        EnemyMovement.speed = 0;
+        GameObject enemy = GameObject.FindWithTag("Enemy");
+        enemy.GetComponent<EnemyMovement>().enabled = false;
         text.SetActive(true);
         background.SetActive(true);
         GameObject playerMovement = GameObject.Find("ThePlayer");
@@ -68,14 +74,12 @@ public class WeaponMechanics : MonoBehaviour
 
             else
             {
+                EnableMovement();
                 text.GetComponent<Text>().text = "";
-                GameObject playerMovement = GameObject.Find("ThePlayer");
-                playerMovement.GetComponent<Player_Action>().enabled = true;
                 text.SetActive(false);
                 background.SetActive(false);
                 Continue.SetActive(false);
                 gameObject.SetActive(false);
-                EnemyMovement.speed = 0.2f;
                 ex.SetActive(false);
             }
 
@@ -84,4 +88,38 @@ public class WeaponMechanics : MonoBehaviour
 
 
     }
+
+
+
+    public void EnableMovement()
+    {
+        GameObject playerMovement = GameObject.Find("ThePlayer");
+        playerMovement.GetComponent<Player_Action>().enabled = true;
+        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+      
+        foreach (GameObject enemy in Enemies)
+        {
+            enemy.GetComponent<EnemyMovement>().enabled = true;
+        }
+
+
+    }
+
+    public void DisableMovement()
+    {
+        GameObject playerMovement = GameObject.Find("ThePlayer");
+        playerMovement.GetComponent<Player_Action>().enabled = false;
+        GameObject[] Enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        foreach (GameObject enemy in Enemies)
+        {
+            enemy.GetComponent<EnemyMovement>().enabled = false;
+        }
+
+
+    }
+
+
+
+
 }

@@ -6,19 +6,20 @@ using UnityEngine.UI;
 public class PlayerStats : MonoBehaviour
 {
     Rigidbody2D rb;
-    public static float hp = 75;
-    public static float ammo = 0;
+    public static float hp = 100;
+    public static float mana = 100;
     public static float xp = 0;
     private float startHealth = 100;
     public float knockBack = 0.5f;
     [Header("Unity")]
     public Image healthBar;
+    public Image manaBar;
 
 
     public void Start()
     { if (GlobalControl.Instance.hp != 0) { 
         //hp = GlobalControl.Instance.hp;
-        ammo = GlobalControl.Instance.ammo;
+        mana = GlobalControl.Instance.mana;
         xp = GlobalControl.Instance.xp;
       
     }
@@ -29,6 +30,8 @@ public class PlayerStats : MonoBehaviour
     {
        
         healthBar.fillAmount = hp / startHealth;
+        manaBar.fillAmount = mana / 100;
+
         SavePlayer();
 
         if(hp <= 0)
@@ -87,7 +90,7 @@ public class PlayerStats : MonoBehaviour
     public void SavePlayer()
     {
         GlobalControl.Instance.hp = hp;
-        GlobalControl.Instance.ammo = ammo;
+        GlobalControl.Instance.mana = mana;
         GlobalControl.Instance.xp = xp;
 
  

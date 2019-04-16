@@ -7,7 +7,7 @@ public class GlobalControl : MonoBehaviour
 {
     public static GlobalControl Instance;
     public float hp;
-    public float ammo;
+    public float mana;
     public float xp;
     public string currentScene;
     public string prevScene;

@@ -6,12 +6,9 @@ using UnityEngine;
 public class EnemyMovement : MonoBehaviour
 {
     public Transform target;
-  
-
-  
-    public static float speed;
+    public float speed = 0.1f;
     public float stopDist = 0.3f;
-
+    
     void Start()
     {
         target = GameObject.FindGameObjectWithTag("Player").GetComponent<Transform>();

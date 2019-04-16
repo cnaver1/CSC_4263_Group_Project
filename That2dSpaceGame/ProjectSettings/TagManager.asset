@@ -9,6 +9,7 @@ TagManager:
   - Projectile
   - Bullets
   - EnemyBullet
+  - Walls
   layers:
   - Default
   - TransparentFX

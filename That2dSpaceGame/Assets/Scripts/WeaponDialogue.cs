@@ -10,13 +10,13 @@ public class WeaponDialogue : MonoBehaviour
     public GameObject text;
     public GameObject background;
     public GameObject Continue;
-    public GameObject Weapon;
     public GameObject FakeWeapon;
     public GameObject Arrow;
     public GameObject DoorClosed;
     public GameObject DoorOpened;
 
     public bool buttonPressed;
+    public static bool equipWeapon;
     public int i = 0;
 
    void OnTriggerEnter2D(Collider2D other)
@@ -25,14 +25,15 @@ public class WeaponDialogue : MonoBehaviour
         DoorClosed.SetActive(false);
         DoorOpened.SetActive(true);
     FakeWeapon.SetActive(false);
-    Weapon.SetActive(true);
+  
     Arrow.SetActive(false);
     text.SetActive(true);
     background.SetActive(true);
     GameObject playerMovement = GameObject.Find("ThePlayer");
     playerMovement.GetComponent<Player_Action>().enabled = false;
     StartCoroutine(TextType(dialogue));
-
+        equipWeapon = true;
+    
 }
 
 // Update is called once per frame

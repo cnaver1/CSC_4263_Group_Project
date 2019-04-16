@@ -60,26 +60,29 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Scripts\Boss01.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
+    <Compile Include="Assets\Scripts\BossStats.cs" />
     <Compile Include="Assets\Scripts\Camera_Movement.cs" />
     <Compile Include="Assets\Scripts\ChangeScene.cs" />
     <Compile Include="Assets\Scripts\Character.cs" />
     <Compile Include="Assets\Scripts\CurrentObjective.cs" />
     <Compile Include="Assets\Scripts\CutScenes.cs" />
     <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
-    <Compile Include="Assets\Scripts\EnemyBehavior.cs" />
+    <Compile Include="Assets\Scripts\Dialogue.cs" />
+    <Compile Include="Assets\Scripts\EnemyBullets.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
+    <Compile Include="Assets\Scripts\EnemyShoot.cs" />
     <Compile Include="Assets\Scripts\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\GlobalControl.cs" />
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
     <Compile Include="Assets\Scripts\HealthPickup.cs" />
     <Compile Include="Assets\Scripts\LockDoors.cs" />
     <Compile Include="Assets\Scripts\MainMenu.cs" />
+    <Compile Include="Assets\Scripts\ManaPickup.cs" />
     <Compile Include="Assets\Scripts\NextSceneTrigger.cs" />
     <Compile Include="Assets\Scripts\Objective1.cs" />
     <Compile Include="Assets\Scripts\Objective2.cs" />
     <Compile Include="Assets\Scripts\ObjectiveHandler.cs" />
+    <Compile Include="Assets\Scripts\onTriggerOpen.cs" />
     <Compile Include="Assets\Scripts\PauseMenu.cs" />
     <Compile Include="Assets\Scripts\Player_Action.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />

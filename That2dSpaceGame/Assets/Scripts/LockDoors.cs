@@ -4,15 +4,31 @@ using UnityEngine;
 
 public class LockDoors : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public static int enemyCount;
+    public GameObject OpenDoor;
+    public GameObject ClosedDoor;
+    int count;
     void Start()
     {
-        
+        OpenDoor.SetActive(false);
+        ClosedDoor.SetActive(true);
+      
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        GameObject[] EnemiesLeft = GameObject.FindGameObjectsWithTag("Enemy");
+        if(EnemiesLeft.Length == 0)
+        {
+            EnemiesDead();
+        }
+    }
+
+  
+
+    void EnemiesDead()
+    {
+            OpenDoor.SetActive(true);
+            ClosedDoor.SetActive(false);
     }
 }
