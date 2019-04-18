@@ -10,6 +10,8 @@ TagManager:
   - Bullets
   - EnemyBullet
   - Walls
+  - SpawnPoint
+  - Rooms
   layers:
   - Default
   - TransparentFX
@@ -55,6 +57,9 @@ TagManager:
     locked: 0
   - name: FloorBottom
     uniqueID: 2748440901
+    locked: 0
+  - name: Walls
+    uniqueID: 2254621341
     locked: 0
   - name: Doors
     uniqueID: 3326704539

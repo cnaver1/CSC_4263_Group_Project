@@ -67,6 +67,7 @@
     <Compile Include="Assets\Scripts\CurrentObjective.cs" />
     <Compile Include="Assets\Scripts\CutScenes.cs" />
     <Compile Include="Assets\Scripts\DestroyAfterTime.cs" />
+    <Compile Include="Assets\Scripts\Destroyier.cs" />
     <Compile Include="Assets\Scripts\Dialogue.cs" />
     <Compile Include="Assets\Scripts\EnemyBullets.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
@@ -87,6 +88,8 @@
     <Compile Include="Assets\Scripts\Player_Action.cs" />
     <Compile Include="Assets\Scripts\PlayerStats.cs" />
     <Compile Include="Assets\Scripts\RoomChange.cs" />
+    <Compile Include="Assets\Scripts\RoomSpawner.cs" />
+    <Compile Include="Assets\Scripts\RoomTemplate.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
     <Compile Include="Assets\Scripts\WASD_Objective.cs" />
     <Compile Include="Assets\Scripts\Weapon_Damage.cs" />
