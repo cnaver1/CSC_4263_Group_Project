@@ -8,6 +8,8 @@ public class EnemyShoot : MonoBehaviour
     public float fireRate;
     public float nextFire;
 
+    public AudioSource shotSound;
+
     void Start()
     {
         nextFire = Time.time;
@@ -23,6 +25,8 @@ public class EnemyShoot : MonoBehaviour
     {
         if (Time.time > nextFire)
         {
+            shotSound.Play();
+
             GameObject bullet = Instantiate(Prefab, transform.position, Quaternion.identity);
            
             nextFire = Time.time + fireRate;

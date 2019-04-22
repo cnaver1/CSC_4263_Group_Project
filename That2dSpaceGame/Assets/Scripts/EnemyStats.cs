@@ -13,6 +13,7 @@ public class EnemyStats : MonoBehaviour
     public float startHealth = 100;
     public float knockBack = 0.1f;
 
+    public AudioSource movement;
 
     [Header("Unity")]
     public Image healthBar;
@@ -22,13 +23,13 @@ public class EnemyStats : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         currentHealth = startHealth;
+        movement.Play();
         
     }
 
     void Update()
     {
         healthBar.fillAmount = currentHealth / startHealth;
-
         if (currentHealth <= 0)
         {
 
@@ -45,7 +46,8 @@ public class EnemyStats : MonoBehaviour
         drop.SetActive(true);
         drop.transform.parent = transform.parent;
         
-    }  
+    }
+       
         GameObject prefab = Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
         prefab.SetActive(true);
         Destroy(gameObject);

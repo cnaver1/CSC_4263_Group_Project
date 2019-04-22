@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\EnemyBullets.cs" />
     <Compile Include="Assets\Scripts\EnemyMovement.cs" />
     <Compile Include="Assets\Scripts\EnemyShoot.cs" />
+    <Compile Include="Assets\Scripts\EnemySoundOFf.cs" />
     <Compile Include="Assets\Scripts\EnemyStats.cs" />
     <Compile Include="Assets\Scripts\GlobalControl.cs" />
     <Compile Include="Assets\Scripts\Health_Bar.cs" />
@@ -91,6 +92,7 @@
     <Compile Include="Assets\Scripts\RoomSpawner.cs" />
     <Compile Include="Assets\Scripts\RoomTemplate.cs" />
     <Compile Include="Assets\Scripts\SceneController.cs" />
+    <Compile Include="Assets\Scripts\SpaceEffect.cs" />
     <Compile Include="Assets\Scripts\WASD_Objective.cs" />
     <Compile Include="Assets\Scripts\Weapon_Damage.cs" />
     <Compile Include="Assets\Scripts\WeaponDialogue.cs" />

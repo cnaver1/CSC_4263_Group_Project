@@ -14,6 +14,9 @@ public class BossStats : MonoBehaviour
     public float fireRate;
     public GameObject healthUI;
 
+    public AudioSource attack;
+    public AudioSource movement;
+
     [Header("Unity")]
     public Image healthBar;
 
@@ -21,7 +24,7 @@ public class BossStats : MonoBehaviour
     {
         currentHealth = startHealth;
         healthUI.SetActive(true);
-      
+        movement.Play();
     }
 
     void Update()
@@ -58,11 +61,13 @@ public class BossStats : MonoBehaviour
 
     void Death()
     {
+        movement.Pause();
         GameObject prefab = Instantiate(DeathEffect, gameObject.transform.position, Quaternion.identity);
         prefab.SetActive(true);
         
         healthUI.SetActive(false);
         Destroy(gameObject);
+        movement.Pause();
         
     }
 

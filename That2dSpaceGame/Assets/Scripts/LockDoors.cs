@@ -8,6 +8,9 @@ public class LockDoors : MonoBehaviour
     public GameObject OpenDoor;
     public GameObject ClosedDoor;
     int count;
+
+ 
+
     void Start()
     {
         OpenDoor.SetActive(false);
@@ -28,6 +31,7 @@ public class LockDoors : MonoBehaviour
 
     void EnemiesDead()
     {
+        
             OpenDoor.SetActive(true);
             ClosedDoor.SetActive(false);
     }

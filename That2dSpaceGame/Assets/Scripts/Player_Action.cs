@@ -12,6 +12,8 @@ public class Player_Action : Character
     public float currentMana;
     public bool equipWeapon = false;
 
+    public AudioSource shurkien_sound;
+
     public static float attackSpeed = 0.7f;
 
    protected override void Update()
@@ -42,7 +44,7 @@ public class Player_Action : Character
         if (Input.GetKey(KeyCode.S)) { direction += Vector2.down; }
         if (Input.GetKey(KeyCode.D)) { direction += Vector2.right; }
 
-        if (isAttacking == false)
+        if (isAttacking == false && equipWeapon == true)
         {
             if (Input.GetButtonDown("leftfire"))
             {
@@ -88,7 +90,7 @@ public class Player_Action : Character
             }
 
             if (Input.GetButtonDown("special"))
-            { if(currentMana >= 25 && equipWeapon == true)
+            { if(currentMana >= 25)
                 {
                     GameObject specialShurken = Instantiate(special, transform.position, Quaternion.identity);
                     GameObject specialShurken1 = Instantiate(special, transform.position, Quaternion.identity);
@@ -142,9 +144,11 @@ public class Player_Action : Character
      IEnumerator Attack()
     {
 
-
+        shurkien_sound.Play();
         yield return new WaitForSeconds(attackSpeed);
         isAttacking = false;
 
     }
+
+  
 }
